@@ -1,0 +1,46 @@
+\documentclass{nwputhesis}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 汉语作者
+\nwpuAuthor{}
+% 专业
+\nwpuMajor{}
+% 指导教师1姓名
+\nwpuSupervisorFirst{}
+% 毕业时间
+\nwpuGraduateTime{}
+%标题
+\nwpuTitleFirstLine{}
+\pagestyle{plain}
+\allowdisplaybreaks[4]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+%
+\include{preface/cover}  %%封面页
+\pagenumbering{Roman}
+\include{preface/cabstract}  %%摘要页
+\include{preface/eabstract}  %%英文摘要页
+\include{preface/contents}   %% 目录、图目录、表目录
+%正文部分
+
+\pagenumbering{arabic}
+\setcounter{page}{4}
+\include{chapter/chapter1}
+\include{chapter/chapter2}
+\include{chapter/chapter3}
+\include{chapter/chapter4}
+\include{chapter/chapter5}
+%用biblatex来管理参考文献
+%参考文献
+\wuhao{}
+\bibliographystyle{GBT7714-2005N}
+
+\ifpdf{} \phantomsection{} \fi
+
+%\addtolength{\itemsep}{-0.8 em} % 缩小参考文献间的垂直间距, 在bibtex下无效
+\bibliography{reference/reference}
+%添加目录到参考文献
+\addcontentsline{toc}{chapter}{Reference}
+%致谢和小结
+\include{appendix/acknowledgements}
+\include{appendix/design-conclusion}
+\end{document}
